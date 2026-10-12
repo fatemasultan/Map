@@ -72,7 +72,7 @@ def UCS(grid):
     explored_count = 0
 
     done = set()
-    max_frontier = 1
+    max_frontier = 1 #maximum number of nodes waiting in the priority queue
 
     while priority_queue:
         current_cost, current_node = heapq.heappop(priority_queue)
@@ -97,7 +97,7 @@ def UCS(grid):
                 parent[neighbor] = current_node     
                 heapq.heappush(priority_queue, (new_cost, neighbor))
         
-         max_frontier = max(max_frontier, len(priority_queue))
+        max_frontier = max(max_frontier, len(priority_queue))
 
     return  None, [], explored_count, max_frontier
 
